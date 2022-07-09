@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer page {
+    .dark\/light-switch {
+        @apply absolute w-10 h-10 bg-gray-400 !shadow-md right-4 dark:bg-slate-900 dark:hover:bg-slate-700 
+            transition-all duration-300 top-4 p-1 rounded-md flex justify-center 
+            items-center cursor-pointer hover:bg-slate-500
+    }
+
+    div {
+        @apply transition-colors
+    }
+
+    * {
+        @apply text-black dark:text-white font-sans
+    }
+
+    .content {
+        @apply absolute left-16 right-0 top-0 h-screen overscroll-contain overflow-auto scroll-smooth;
+    }
+
+
+
+    .content::-webkit-scrollbar {
+        @apply w-2
+    }
+  
+    .content::-webkit-scrollbar-track {
+        @apply bg-transparent
+    }
+    
+    .content::-webkit-scrollbar-thumb {
+        @apply dark:bg-slate-900 dark:hover:bg-slate-700 bg-gray-400 hover:bg-slate-500 rounded-md
+    }
 }
