@@ -1,10 +1,11 @@
 import React from 'react';
 import {useState} from 'react';
 import {MdDarkMode, MdLightMode} from 'react-icons/md';
-import {Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { AiFillHome, AiFillInfoCircle } from 'react-icons/ai';
+import { IoMdSchool } from 'react-icons/io';
 
 function App() {
-  const [dark_theme, set_dark_theme] = useState(true);
+  const [dark_theme, set_dark_theme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   const changeTheme = () => {
     set_dark_theme(!dark_theme)
@@ -14,33 +15,42 @@ function App() {
   return (
     <div className={dark_theme ? 'dark' : ''}>
       <div className='absolute top-0 left-0 w-screen h-screen bg-gray-300 dark:bg-slate-800'/>
-      <div className='absolute top-0 left-0 w-16 h-screen bg-gray-400 !shadow-lg dark:bg-slate-900'>
-        
+      <div className='sidebar pt-5 flex items-center flex-col gap-3'>
+        <div className='w-full h-11 hover:border-l-4 flex justify-center items-center transition-all hover:cursor-pointer'>
+          <div className='text-2xl w-11 h-11 text-center rounded-[100%] hover:rounded-md dark:bg-slate-600 bg-slate-300 flex justify-center items-center transition-all'>
+            <AiFillHome/>
+          </div>
+        </div>
+        <div className='w-full h-11 hover:border-l-4 flex justify-center items-center transition-all  hover:cursor-pointer'>
+          <div className='text-2xl w-11 h-11 text-center rounded-[100%] hover:rounded-md dark:bg-slate-600 bg-slate-300 flex justify-center items-center transition-all'>
+            <AiFillInfoCircle/>
+          </div>
+        </div>
+        <div className='w-full h-11 hover:border-l-4 flex justify-center items-center transition-all  hover:cursor-pointer'>
+          <div className='text-2xl w-11 h-11 text-center rounded-[100%] hover:rounded-md dark:bg-slate-600 bg-slate-300 flex justify-center items-center transition-all'>
+            <IoMdSchool/>
+          </div>
+        </div>
+
       </div>
 
       <div id='content' className='content'>
-        <ParallaxProvider>
-          <Parallax speed={-10}>
-            <div className='h-screen flex items-center'>
-              <h1 className='text-8xl mx-10 w-fit'>
-                Kacper Tucholski
-                <h2 className='text-4xl opacity-70 mt-3 text-center'>
-                  Web developer from Poland
-                </h2>
-              </h1>
-            </div>
-          </Parallax>
-          <Parallax speed={5}>
-            <div className='h-screen flex items-center'>
-              <h1 className='text-8xl mx-10 w-fit'>
-                Kacper Tucholski
-                <h2 className='text-4xl opacity-70 mt-3 text-center'>
-                  Web developer from Poland
-                </h2>
-              </h1>
-            </div>
-          </Parallax>
-        </ParallaxProvider>
+        <div className='h-screen w-full flex items-center justify-center'>
+          <h1 className='text-8xl w-fit'>
+            Kacper Tucholski
+            <h2 className='text-4xl opacity-70 mt-3 text-center'>
+              Web developer from Poland
+            </h2>
+          </h1>
+        </div>
+        <div className='h-screen w-full flex items-center justify-center'>
+          <h1 className='text-8xl w-fit'>
+            Kacper Tucholski
+            <h2 className='text-4xl opacity-70 mt-3 text-center'>
+              Web developer from Poland
+            </h2>
+          </h1>
+        </div>
       </div>
 
       <div className='dark/light-switch' onClick={changeTheme}>

@@ -17,11 +17,13 @@
         @apply text-black dark:text-white font-sans
     }
 
+    .sidebar {
+        @apply absolute top-0 left-0 w-16 h-screen bg-gray-400 !shadow-lg dark:bg-slate-900 z-10
+    }
+
     .content {
         @apply absolute left-16 right-0 top-0 h-screen overscroll-contain overflow-auto scroll-smooth;
     }
-
-
 
     .content::-webkit-scrollbar {
         @apply w-2
