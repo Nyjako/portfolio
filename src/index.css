@@ -48,4 +48,20 @@
     .tooltip {
         @apply bg-gray-400 !shadow-md dark:bg-slate-900 dark:border-slate-900 border-gray-400 w-fit h-fit p-2 border-2 rounded-md opacity-0 group-hover:opacity-100 transition-all delay-75 pointer-events-none
     }
+
+    table {
+        @apply table-auto rounded-md
+    }
+
+    table tr:nth-child(even) {
+        @apply bg-slate-900
+    }
+
+    table tr:nth-child(odd) {
+        @apply bg-slate-700
+    }
+
+    table tr  {
+        @apply border-4 border-white
+    }
 }
