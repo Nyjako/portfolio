@@ -19,10 +19,10 @@ const load_particles = () => {
           fpsLimit: 120,
           interactivity: {
             events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
+              // onClick: { // it cause big lag on phone
+              //   enable: true,
+              //   mode: "push",
+              // },
               onHover: {
                 enable: true,
                 mode: "repulse",
@@ -31,7 +31,7 @@ const load_particles = () => {
             },
             modes: {
               push: {
-                quantity: 4,
+                quantity: 1,
               },
               repulse: {
                 distance: 200,

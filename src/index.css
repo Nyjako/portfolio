@@ -70,4 +70,24 @@
         @apply py-5 px-10 bg-gray-400 !shadow-md right-4 dark:bg-slate-900 dark:hover:bg-slate-700 cursor-pointer hover:bg-slate-500
                transition-all duration-300 p-1 rounded-xl font-bold flex gap-3 items-center text-xl
     }
+
+    table > tr > td:first-child {
+        @apply font-bold
+    }
+
+    .head_text {
+        @apply md:text-8xl sm:text-4xl text-2xl font-bold
+    }
+
+    .mid_text {
+        @apply md:text-4xl sm:text-2xl text-xl
+    }
+
+    .sm_text {
+        @apply md:text-2xl sm:text-xl text-lg
+    }
+
+    section:not(:last-child) {
+        @apply border-b-2 py-10 dark:border-white/20 border-black/20 border-dashed
+    }
 }

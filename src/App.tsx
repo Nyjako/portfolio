@@ -19,6 +19,11 @@ function App() {
     set_dark_theme(!dark_theme)
   };
 
+  React.useEffect(() => {
+    document.title = "KT"
+  }, []);
+ 
+
   return (
     <div className={dark_theme ? 'dark' : ''}>
       {/* <div className='absolute top-0 left-0 w-screen h-screen bg-gray-300 dark:bg-slate-800'/> */}
@@ -36,10 +41,10 @@ function App() {
 
       <div id='content' className='content'>
         <section id="home">
-          <div className='h-screen w-full flex items-center justify-center'>
-            <h1 className='md:text-8xl sm:text-4xl text-2xl w-fit'>
+          <div className='h-screen w-full flex items-center justify-center text-center'>
+            <h1 className='head_text w-fit'>
               Kacper Tucholski
-              <h2 className='md:text-4xl sm:text-2xl text-xl opacity-70 mt-3 text-center'>
+              <h2 className='mid_text opacity-70 mt-3 text-center'>
                 Web developer from Poland
               </h2>
             </h1>
@@ -47,28 +52,28 @@ function App() {
         </section>
 
         <section id="about_me">
-          <div className='min-h-screen w-full flex justify-center items-center flex-col gap-10'>
-            <h2 className='text-8xl w-fit'>
+          <div className='min-h-screen w-full flex justify-center items-center flex-col md:gap-10 gap-0'>
+            <h2 className='head_text w-fit'>
               About me
             </h2>
-            <div className='w-full p-10 flex gap-16 justify-center items-center'>
-              <div className='flex flex-col gap-5 text-2xl text-right'>
+            <div className='w-full p-10 flex md:flex-row flex-col md:gap-16 gap-5 justify-center items-center'>
+              <div className='flex flex-col gap-5 md:text-2xl text-xl md:text-right text-center'>
                 <p>I'm web developer from Poland. I have passion for creating something from nothing</p>
                 <p>In my spare time, I like to develop my programming skills, play games and watch anime</p>
                 <p>My dream is to one day make my own game</p>
               </div>
-              <img src="prof.png" alt="" srcSet="" width={256} height={256} className='rounded-lg shadow-xl' />
+              <img src="prof.png" alt="" srcSet="" className='rounded-lg shadow-xl md:w-[256px] max-w-full aspect-square mb-32 md:mb-0' />
             </div>
           </div>
         </section>
 
         <section id="skills">
-          <div className='h-screen w-full flex justify-center items-center flex-col gap-16'>
-            <h2 className='text-8xl h-fit text-center'>
+          <div className='min-h-screen w-full flex md:justify-center items-center flex-col md:gap-10 gap-5'>
+            <h2 className='head_text h-fit text-center'>
               Skills
             </h2>
             <div className='w-full flex justify-center items-center gap-5'>
-              <div className='flex w-fit h-fit md:gap-24 gap-10 md:flex-row flex-col'>
+              <div className='flex w-fit h-fit tab:gap-24 gap-10 tab:flex-row flex-col'>
                 <Skills/>
               </div>
             </div>
@@ -77,24 +82,24 @@ function App() {
 
         <section id="school">
           <div className='min-h-screen w-full flex items-center justify-center flex-col'>
-            <h2 className='text-8xl w-fit mb-10'>
+            <h2 className='head_text w-fit mb-10'>
               School
             </h2>
-            <p className='text-4xl w-fit'>
+            <p className='mid_text text-center w-fit'>
               Państwowa Wyższa Szkoła Zawodowa w Nysie
             </p>
-            <p className='text-2xl w-fit opacity-70'>
+            <p className='sm_text w-fit opacity-70'>
               2018 - Present 
             </p>
           </div>
         </section>
 
         <section id="contact">
-          <div className='min-h-screen w-full flex items-center justify-center flex-col gap-10'>
-            <h2 className='text-8xl w-fit'>
+          <div className='min-h-screen w-full flex items-center justify-center flex-col md:gap-10 gap-5'>
+            <h2 className='head_text w-fit'>
               Contact & Social
             </h2>
-            <div className='flex gap-5'>
+            <div className='flex gap-5 flex-col md:flex-row items-center md:items-start'>
               <a href="mailto:kacper.tucholski.kt@gmail.com">
                 <button className='social_button'>
                   <AiFillMail className='text-2xl'/>
@@ -117,8 +122,8 @@ function App() {
           </div>
         </section>
         <section id="info">
-          <div className='min-h-screen w-full flex items-center justify-center flex-col gap-10'>
-            <h2 className='text-8xl w-fit'>
+          <div className='min-h-screen w-full flex items-center justify-center flex-col md:gap-10 gap-5'>
+            <h2 className='head_text w-fit'>
               Info
             </h2>
             <div className='flex flex-col text-center'>
@@ -129,15 +134,21 @@ function App() {
                 </a>
               </p>
               <p className='text-xl'>
-                Icons provided by <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                Icons <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
                   href='https://react-icons.github.io/react-icons' target="_blank" rel="noopener noreferrer">
                   React-icons
                 </a>
               </p>
               <p className='text-xl'>
-                Style created using <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                Style <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
                   href='https://tailwindcss.com' target="_blank" rel="noopener noreferrer">
                   TailwindCSS
+                </a>
+              </p>
+              <p className='text-xl'>
+                Background <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                  href='https://www.npmjs.com/package/react-tsparticles' target="_blank" rel="noopener noreferrer">
+                  react-tsparticles
                 </a>
               </p>
               <p className='text-xl'>

@@ -2,7 +2,7 @@ export function Skills() {
   return (
     <>
       {" "}
-      <table className="data-table table-fixed rounded-md border-slate-600 border-4">
+      <table className="data-table table-fixed rounded-md border-slate-600 border-4 flex-1">
         <tr>
           <th className="data-table-header border-4 border-slate-600">
             Language
@@ -66,7 +66,7 @@ export function Skills() {
           </td>
         </tr>
       </table>
-      <table className="data-table table-fixed rounded-md border-slate-600 border-4 flex-grow">
+      <table className="data-table table-fixed rounded-md border-slate-600 border-4 flex-grow flex-1">
         <tr>
           <th className="data-table-header border-4 border-slate-600">
             Technology
@@ -138,7 +138,7 @@ export function Skills() {
           </td>
         </tr>
       </table>
-      <table className="data-table table-fixed rounded-md border-slate-600 border-4">
+      <table className="data-table table-fixed rounded-md border-slate-600 border-4 flex-1">
         <tr>
           <th className="data-table-header border-4 border-slate-600">Tool</th>
           <th className="data-table-header border-4 border-slate-600">Level</th>
