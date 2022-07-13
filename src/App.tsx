@@ -1,10 +1,16 @@
+import { Skills } from './components/skills';
 import React from 'react';
 import {useState} from 'react';
-import {MdDarkMode, MdLightMode, MdOutlineConnectWithoutContact} from 'react-icons/md';
-import { AiFillHome, AiFillInfoCircle } from 'react-icons/ai';
-import { IoMdSchool } from 'react-icons/io';
-import { FaLaptopCode } from 'react-icons/fa'
 import ScrollIntoView from 'react-scroll-into-view'
+import load_particles from './components/particles'
+
+import { AiFillHome, AiFillInfoCircle, AiFillMail, AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import { BsFillPersonLinesFill } from 'react-icons/bs'
+import {MdDarkMode, MdLightMode} from 'react-icons/md';
+import { FaLaptopCode } from 'react-icons/fa'
+import { IoMdSchool } from 'react-icons/io';
+import { GiTalk } from 'react-icons/gi'
+
 
 function App() {
   const [dark_theme, set_dark_theme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -15,13 +21,17 @@ function App() {
 
   return (
     <div className={dark_theme ? 'dark' : ''}>
-      <div className='absolute top-0 left-0 w-screen h-screen bg-gray-300 dark:bg-slate-800'/>
+      {/* <div className='absolute top-0 left-0 w-screen h-screen bg-gray-300 dark:bg-slate-800'/> */}
+      <div className='absolute top-0 left-0 w-screen h-screen bg-gray-300 dark:bg-slate-800'>
+        {load_particles()}
+      </div>
       <div className='sidebar pt-5 flex items-center flex-col gap-3'>
         {sidebar_button("Home", <AiFillHome/>, "#home")}
-        {sidebar_button("Info", <AiFillInfoCircle/>, "#info")}
-        {sidebar_button("Technologies", <FaLaptopCode/>, "#technologies")}
+        {sidebar_button("About_me", <BsFillPersonLinesFill/>, "#about_me")}
+        {sidebar_button("Skills", <FaLaptopCode/>, "#skills")}
         {sidebar_button("School", <IoMdSchool/>, "#school")}
-        {sidebar_button("Contact", <MdOutlineConnectWithoutContact/>, "#contact")}
+        {sidebar_button("Contact", <GiTalk/>, "#contact")}
+        {sidebar_button("Info", <AiFillInfoCircle/>, "#info")}
       </div>
 
       <div id='content' className='content'>
@@ -36,58 +46,107 @@ function App() {
           </div>
         </section>
 
-        <section id="info">
-          <div className='min-h-screen w-full flex justify-center'>
+        <section id="about_me">
+          <div className='min-h-screen w-full flex justify-center items-center flex-col gap-10'>
             <h2 className='text-8xl w-fit'>
-              Info
+              About me
             </h2>
+            <div className='w-full p-10 flex gap-16 justify-center items-center'>
+              <div className='flex flex-col gap-5 text-2xl text-right'>
+                <p>I'm web developer from Poland. I have passion for creating something from nothing</p>
+                <p>In my spare time, I like to develop my programming skills, play games and watch anime</p>
+                <p>My dream is to one day make my own game</p>
+              </div>
+              <img src="prof.png" alt="" srcSet="" width={256} height={256} className='rounded-lg shadow-xl' />
+            </div>
           </div>
         </section>
 
-        <section id="technologies">
-          <div className='min-h-screen w-full flex items-center flex-col'>
-            <h2 className='text-8xl w-fit'>
-              Technologies
+        <section id="skills">
+          <div className='h-screen w-full flex justify-center items-center flex-col gap-16'>
+            <h2 className='text-8xl h-fit text-center'>
+              Skills
             </h2>
-            <div className='w-full flex justify-center'>
-              <table>
-                <tr>
-                  <th colSpan={2}>Languages</th>
-                </tr>
-                <tr>
-                  <th>Language</th>
-                  <th>Level</th>
-                </tr>
-                <tr>
-                  <td>C++</td>
-                  <td>●●○○</td>
-                </tr>
-                <tr>
-                  <td>C++</td>
-                  <td>●●○○</td>
-                </tr>
-                <tr>
-                  <td>C++</td>
-                  <td>●●○○</td>
-                </tr>
-              </table>
+            <div className='w-full flex justify-center items-center gap-5'>
+              <div className='flex w-fit h-fit md:gap-24 gap-10 md:flex-row flex-col'>
+                <Skills/>
+              </div>
             </div>
           </div>
         </section>
 
         <section id="school">
-          <div className='min-h-screen w-full flex items-center justify-center'>
-            <h2 className='text-8xl w-fit'>
+          <div className='min-h-screen w-full flex items-center justify-center flex-col'>
+            <h2 className='text-8xl w-fit mb-10'>
               School
             </h2>
+            <p className='text-4xl w-fit'>
+              Państwowa Wyższa Szkoła Zawodowa w Nysie
+            </p>
+            <p className='text-2xl w-fit opacity-70'>
+              2018 - Present 
+            </p>
           </div>
         </section>
 
         <section id="contact">
-          <div className='min-h-screen w-full flex items-center justify-center'>
+          <div className='min-h-screen w-full flex items-center justify-center flex-col gap-10'>
             <h2 className='text-8xl w-fit'>
-              Contact
+              Contact & Social
             </h2>
+            <div className='flex gap-5'>
+              <a href="mailto:kacper.tucholski.kt@gmail.com">
+                <button className='social_button'>
+                  <AiFillMail className='text-2xl'/>
+                  Get in Touch
+                </button>
+              </a>
+              <a href="https://github.com/Nyjako" target="_blank" rel="noopener noreferrer">
+                <button className='social_button'>
+                  <AiFillGithub className='text-2xl'/>
+                  Github
+                </button>
+              </a>
+              <a href="https://www.linkedin.com/in/nyjako/" target="_blank" rel="noopener noreferrer">
+                <button className='social_button'>
+                  <AiFillLinkedin className='text-2xl'/>
+                  LinkedIn
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section id="info">
+          <div className='min-h-screen w-full flex items-center justify-center flex-col gap-10'>
+            <h2 className='text-8xl w-fit'>
+              Info
+            </h2>
+            <div className='flex flex-col text-center'>
+              <p className='text-xl'>
+                Created using <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                  href='https://reactjs.org' target="_blank" rel="noopener noreferrer">
+                  React
+                </a>
+              </p>
+              <p className='text-xl'>
+                Icons provided by <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                  href='https://react-icons.github.io/react-icons' target="_blank" rel="noopener noreferrer">
+                  React-icons
+                </a>
+              </p>
+              <p className='text-xl'>
+                Style created using <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                  href='https://tailwindcss.com' target="_blank" rel="noopener noreferrer">
+                  TailwindCSS
+                </a>
+              </p>
+              <p className='text-xl'>
+                <a className='underline text-blue-600 hover:text-blue-800 visited:text-purple-600'
+                  href='https://github.com/Nyjako/portfolio' target="_blank" rel="noopener noreferrer">
+                  Source Code
+                </a>
+              </p>
+            </div>
           </div>
         </section>
       </div>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer page {
+@layer utilities {
     .dark\/light-switch {
         @apply absolute w-10 h-10 bg-gray-400 !shadow-md right-4 dark:bg-slate-900 dark:hover:bg-slate-700 
             transition-all duration-300 top-4 p-1 rounded-md flex justify-center 
@@ -42,26 +42,32 @@
     }
 
     .sidebar_button_icon {
-        @apply text-2xl w-11 h-11 text-center rounded-[100%] group-hover:rounded-md dark:bg-slate-600 bg-slate-300 flex justify-center items-center transition-all
+        @apply text-2xl w-11 h-11 text-center rounded-[100%] group-hover:rounded-md dark:bg-slate-600 
+             bg-slate-300 flex justify-center items-center transition-all
     }
 
     .tooltip {
-        @apply bg-gray-400 !shadow-md dark:bg-slate-900 dark:border-slate-900 border-gray-400 w-fit h-fit p-2 border-2 rounded-md opacity-0 group-hover:opacity-100 transition-all delay-75 pointer-events-none
+        @apply bg-gray-400 !shadow-md dark:bg-slate-900 dark:border-slate-900 border-gray-400 
+               w-fit h-fit p-2 border-2 rounded-md opacity-0 group-hover:opacity-100 transition-all delay-75 pointer-events-none
     }
 
-    table {
-        @apply table-auto rounded-md
+    .data-table tr:nth-child(even) {
+        @apply dark:bg-slate-900 bg-gray-400
     }
 
-    table tr:nth-child(even) {
-        @apply bg-slate-900
+    .data-table tr:nth-child(odd) {
+        @apply dark:bg-slate-700 bg-gray-500
+    }
+    
+    .data-table-header {
+        @apply px-3 py-2 dark:bg-slate-900 bg-gray-400
+    }
+    .data-table-content {
+        @apply px-2 py-1 text-center
     }
 
-    table tr:nth-child(odd) {
-        @apply bg-slate-700
-    }
-
-    table tr  {
-        @apply border-4 border-white
+    .social_button {
+        @apply py-5 px-10 bg-gray-400 !shadow-md right-4 dark:bg-slate-900 dark:hover:bg-slate-700 cursor-pointer hover:bg-slate-500
+               transition-all duration-300 p-1 rounded-xl font-bold flex gap-3 items-center text-xl
     }
 }
