@@ -18,10 +18,6 @@ function App() {
   const changeTheme = () => {
     set_dark_theme(!dark_theme)
   };
-
-  React.useEffect(() => {
-    document.title = "KT"
-  }, []);
  
 
   return (
@@ -42,7 +38,7 @@ function App() {
       <div id='content' className='content'>
         <section id="home">
           <div className='h-screen w-full flex items-center justify-center text-center'>
-            <h1 className='head_text w-fit'>
+            <h1 className='head_text w-fit p-10'>
               Kacper Tucholski
               <h2 className='mid_text opacity-70 mt-3 text-center'>
                 Web developer from Poland
@@ -123,6 +119,7 @@ function App() {
         </section>
         <section id="info">
           <div className='min-h-screen w-full flex items-center justify-center flex-col md:gap-10 gap-5'>
+            <div className='dark:bg-black/20 bg-white/60 rounded-lg shadow-md backdrop-blur-2xl p-10 flex items-center flex-col'>
             <h2 className='head_text w-fit'>
               Info
             </h2>
@@ -158,6 +155,7 @@ function App() {
                 </a>
               </p>
             </div>
+          </div>
           </div>
         </section>
       </div>
