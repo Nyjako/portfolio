@@ -12,13 +12,13 @@ export function Skills() {
         <tr>
           <td className="data-table-content border-2 border-slate-600">C</td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(1)}
+            {circle(2)}
           </td>
         </tr>
         <tr>
           <td className="data-table-content border-2 border-slate-600">C++</td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(2)}
+            {circle(3)}
           </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@ export function Skills() {
             Python
           </td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(1)}
+            {circle(2)}
           </td>
         </tr>
         <tr>
@@ -56,13 +56,15 @@ export function Skills() {
             CSS & HTML
           </td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(3)}
+            {circle(4)}
           </td>
         </tr>
         <tr>
-          <td className="data-table-content border-2 border-slate-600">Rust</td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(1)}
+            Rust
+          </td>
+          <td className="data-table-content border-2 border-slate-600">
+            {circle(2)}
           </td>
         </tr>
       </table>
@@ -110,7 +112,7 @@ export function Skills() {
             NextJS
           </td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(2)}
+            {circle(3)}
           </td>
         </tr>
         <tr>
@@ -170,7 +172,7 @@ export function Skills() {
             CMake
           </td>
           <td className="data-table-content border-2 border-slate-600">
-            {circle(1)}
+            {circle(2)}
           </td>
         </tr>
       </table>
